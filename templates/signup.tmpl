@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ template "header" . }}
+<body>
+    <div class="container">
+    <h1>SignUp</h1>
+    {{ template "global-navigator" . }}
+        <form action="/signup" method="POST">
+            {{ template "csrf-hidden" . }}
+            <label for="email">email</label>
+            <input type="email" class="form-control" name="email" placeholder="email" value="">
+            <label for="name">name</label>
+            <input type="text" class="form-control" name="name" placeholder="name" value="">
+            <label for="password">password</label>
+            <input type="password" class="form-control" name="password" placeholder="password" value="">
+            <input type="submit" value="signup" class="btn btn-default">
+        </form>
+    {{ template "footer" .}}
+    </div>
+</body>
+</html>

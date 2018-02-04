@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ template "header" . }}
+<body>
+    {{ template "global-navigator" . }}
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-8">
+                <!-- Blog Post -->
+                <!-- Title -->
+                <h1>{{ .article.Title }}</h1>
+
+                <!-- Author -->
+                <p class="lead">
+                    by <a href="#">{{ .article.UserName }}</a>
+                </p>
+
+                <hr>
+
+                <!-- Date/Time -->
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{.article.Created}}</p>
+
+                <hr>
+
+                <!-- Post Content -->
+                <p class="lead">{{nl2br .article.Body}}</p>
+
+                <hr>
+                <p><a href="/article/{{.article.ID}}/edit">edit this</a></p>
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <form action="/search">
+                            <input type="text" name="q" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </form>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        {{ template "footer" .}}
+    </div>
+    <!-- /.container -->
+
+</body>
+</html>
