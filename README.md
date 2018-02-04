@@ -67,6 +67,3 @@ UI Template is based on [BlackrockDigital/startbootstrap-blog-post](https://gith
 
 MIT
 
-## Author
-
-Kenta Suzuki (a.k.a. suzuken)
